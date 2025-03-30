@@ -21,6 +21,7 @@ struct EmotionCardView: View {
                         endPoint: .bottom
                     )
                 )
+                .shadow(radius: 4)
             
     
             Image(systemName: emotion.symbol)
@@ -33,6 +34,7 @@ struct EmotionCardView: View {
                     )
                 )
                 .padding(20)
+                .shadow(radius: 4)
             
             Text(emotion.title)
                 .font(.headline)
