@@ -16,9 +16,20 @@ struct AngryView: View {
                 endPoint: .bottom
             )
             .ignoresSafeArea(edges: .all)
-            VStack {
-                Text("Angry View")
+            
+            LinearGradient(
+                colors: [Color("Angry Top"), Color("Angry Bottom")],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .frame(width: 350, height: 700)
+            .clipShape(RoundedRectangle(cornerRadius: 40))
+            .shadow(radius: 10)
+            TabView {
+                SadView()
+                SadView()
             }
+            .tabViewStyle(.page(indexDisplayMode: .automatic))
         }
     }
 }
