@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		DD5CC75C2D988426001971D3 /* Shifa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Shifa.app; path = "/Users/fahim/Desktop/Personal Projects/Shifa/build/Debug-iphoneos/Shifa.app"; sourceTree = "<absolute>"; };
+		DD5CC79D2D9A06B8001971D3 /* Shifa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shifa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -33,6 +33,7 @@
 			isa = PBXGroup;
 			children = (
 				DD5CC75E2D988426001971D3 /* Shifa */,
+				DD5CC79D2D9A06B8001971D3 /* Shifa.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,7 +59,7 @@
 			packageProductDependencies = (
 			);
 			productName = Shifa;
-			productReference = DD5CC75C2D988426001971D3 /* Shifa.app */;
+			productReference = DD5CC79D2D9A06B8001971D3 /* Shifa.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */

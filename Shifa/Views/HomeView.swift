@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @State private var animateCapsule = false
+
     var body: some View {
         
         NavigationStack {
@@ -52,15 +55,20 @@ struct HomeView: View {
                                 
                                 Image(systemName: "plus.circle.fill")
                                     .font(.system(size: 50))
-                                    .foregroundColor(.black)
+                                    .foregroundColor(Color.green)
                                     .frame(maxWidth: .infinity, alignment: .trailing)
                                     .padding(.trailing, 60)
+                                    .shadow(radius: 2)
                             }
                         }
                         .frame(width: 350, height: 100)
                         .clipShape(Capsule())
                         .shadow(radius: 4)
-                    }
+                        .scaleEffect(animateCapsule ? 1.05 : 0.6)
+                        .rotationEffect(.degrees(animateCapsule ? 0 : -720))
+                        .opacity(animateCapsule ? 1 : 0)
+                        .animation(.interpolatingSpring(stiffness: 100, damping: 10).delay(0.2), value: animateCapsule)
+                        }
                     
                     Text("Take a moment to reflect")
                         .foregroundColor(.black)
@@ -68,10 +76,18 @@ struct HomeView: View {
                         .padding(.top, 40)
                     
                     Spacer()
+                    
+                    }
+                    
                 }
             }
+        .onAppear {
+            animateCapsule = true
         }
+
+        .accentColor(.black)
     }
+
 }
 
 

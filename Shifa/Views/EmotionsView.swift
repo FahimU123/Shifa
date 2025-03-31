@@ -12,6 +12,10 @@ import SwiftUI
 struct EmotionsView: View {
     @State private var viewModel = EmotionsViewModel()
     
+    let columns = [GridItem(.flexible(), spacing: 20), GridItem(.flexible(), spacing: 20)]
+
+
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -21,23 +25,42 @@ struct EmotionsView: View {
                     endPoint: .bottom
                 )
                 .ignoresSafeArea(edges: .all)
-                ScrollView {
-                    VStack(spacing: 20) {
+                    VStack(spacing: 40) {
                         Text("Tap the emotion you feel right now")
                             .font(.system(size: 34, design: .monospaced).weight(.semibold))
                             .padding(.horizontal, 20)
                             .multilineTextAlignment(.center)
-                            .padding(.top, 40)
                         
-                        LazyVGrid(columns: [GridItem(.flexible(), spacing: 20), GridItem(.flexible())], spacing: 20) {
+                        LazyVGrid(columns: columns, spacing: 20) {
                             ForEach(viewModel.emotions) { emotion in
-                                EmotionCardView(emotion: emotion)
+                                NavigationLink(destination: destinationView(for: emotion)) {
+                                    EmotionCardView(emotion: emotion)
+                                }
                             }
                         }
+
                         .padding(20)
                     }
-                }
             }
+        }
+        
+    }
+    
+    @ViewBuilder
+    func destinationView(for emotion: Emotion) -> some View {
+        switch emotion.type {
+        case .happy:
+            HomeView()
+        case .sad:
+            HomeView()
+        case .angry:
+            AngryView()
+        case .doubtful:
+            HomeView()
+        case .guilty:
+            HomeView()
+        case .anxious:
+            HomeView()
         }
     }
 }
