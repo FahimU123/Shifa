@@ -10,7 +10,8 @@ import SwiftUI
 
 
 struct EmotionsView: View {
-    @State private var viewModel = EmotionsViewModel()
+    
+    @State private var viewModel = EmotionsViewModel.shared
     
     let columns = [GridItem(.flexible(), spacing: 20), GridItem(.flexible(), spacing: 20)]
 

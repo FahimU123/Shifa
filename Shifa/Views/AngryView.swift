@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct AngryView: View {
+    
+    let angryEmotion = EmotionsViewModel.shared.emotions.first { $0.type == .angry }
+    
     var body: some View {
         ZStack {
             LinearGradient(
@@ -26,14 +29,15 @@ struct AngryView: View {
             .clipShape(RoundedRectangle(cornerRadius: 40))
             .shadow(radius: 10)
             TabView {
-                SadView()
-                SadView()
+                BeginAngryView(emotion: angryEmotion!)
+                HomeView()
+                
             }
             .tabViewStyle(.page(indexDisplayMode: .automatic))
         }
     }
 }
 
-#Preview {
-    AngryView()
-}
+//#Preview {
+//    AngryView()
+//}

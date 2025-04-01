@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-enum EmotionType: String, CaseIterable {
+enum EmotionType {
     case happy
     case sad
     case angry
@@ -16,11 +16,19 @@ enum EmotionType: String, CaseIterable {
     case guilty
     case anxious
 }
-struct Emotion: Identifiable, Hashable {
+class Emotion: Identifiable {
     let id = UUID()
-    let title: String
+    let title: String 
     let symbol: String
     let gradient: Gradient
     let symbolGradient: Gradient
     let type: EmotionType
+    
+    init(title: String, symbol: String, gradient: Gradient, symbolGradient: Gradient, type: EmotionType) {
+        self.title = title
+        self.symbol = symbol
+        self.gradient = gradient
+        self.symbolGradient = symbolGradient
+        self.type = type
+    }
 }

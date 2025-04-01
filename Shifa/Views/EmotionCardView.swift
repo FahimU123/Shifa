@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EmotionCardView: View {
+    
     let emotion: Emotion
     
     var body: some View {
@@ -33,6 +34,7 @@ struct EmotionCardView: View {
                         endPoint: .bottom
                     )
                 )
+                .foregroundColor(.black)
                 .padding(20)
                 .shadow(radius: 4)
             
