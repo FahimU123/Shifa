@@ -53,7 +53,7 @@ struct EmotionsView: View {
         case .happy:
             HomeView()
         case .sad:
-            HomeView()
+            SadView()
         case .angry:
             AngryView()
         case .doubtful:

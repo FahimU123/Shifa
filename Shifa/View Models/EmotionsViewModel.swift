@@ -15,7 +15,7 @@ class EmotionsViewModel {
     
      var emotions: [Emotion] = [
         Emotion(title: "HAPPY", symbol: "sparkles",
-               gradient: Gradient(colors: [Color("Happy Top"), Color("Happy Bottom")]),
+                gradient: Gradient(colors: [Color(.white), Color("Dua Bottom")]),
                 symbolGradient: Gradient(colors: [Color("Star Top"), Color("Star Bottom")]), type: .happy),
         
         Emotion(title: "SAD", symbol: "drop.fill",

@@ -20,17 +20,11 @@ struct AngryView: View {
             )
             .ignoresSafeArea(edges: .all)
             
-            LinearGradient(
-                colors: [Color("Angry Top"), Color("Angry Bottom")],
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .frame(width: 350, height: 700)
-            .clipShape(RoundedRectangle(cornerRadius: 40))
-            .shadow(radius: 10)
             TabView {
                 BeginAngryView(emotion: angryEmotion!)
-                HomeView()
+                AngryQuranView(emotion: angryEmotion!)
+                AngryPropheticGuidanceView(emotion: angryEmotion!)
+                AngryDuaView(emotion: angryEmotion!)
                 
             }
             .tabViewStyle(.page(indexDisplayMode: .automatic))
