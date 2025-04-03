@@ -32,6 +32,6 @@ struct AngryView: View {
     }
 }
 
-//#Preview {
-//    AngryView()
-//}
+#Preview {
+    AngryView()
+}

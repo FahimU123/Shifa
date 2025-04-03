@@ -1,5 +1,5 @@
 //
-//  GuiltyView.swift
+//  DoubtfulView.swift
 //  Shifa
 //
 //  Created by Fahim Uddin on 4/3/25.
@@ -7,9 +7,8 @@
 
 import SwiftUI
 
-struct GuiltyView: View {
-    
-    let guiltyEmotion = EmotionsViewModel.shared.emotions.first { $0.type == .guilty }
+struct DoubtfulView: View {
+    let doubtfulEmotion = EmotionsViewModel.shared.emotions.first { $0.type == .doubtful }
     
     var body: some View {
         ZStack {
@@ -21,9 +20,10 @@ struct GuiltyView: View {
             .ignoresSafeArea(edges: .all)
             
             TabView {
-                BeginGuiltyView(emotion: guiltyEmotion!)
-                GuiltyQuranView(emotion: guiltyEmotion!)
-                GuiltyPropheticGuidanceView(emotion: guiltyEmotion!)
+                BeginDoubtfulView(emotion: doubtfulEmotion!)
+                DoubtfulQuranView(emotion: doubtfulEmotion!)
+                DoubtfulPropheticGuidanceView(emotion: doubtfulEmotion!)
+                    
                 
             }
             .tabViewStyle(.page(indexDisplayMode: .automatic))
@@ -31,7 +31,6 @@ struct GuiltyView: View {
     }
 }
 
-
 #Preview {
-    GuiltyView()
+    DoubtfulView()
 }

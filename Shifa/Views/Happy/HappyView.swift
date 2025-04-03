@@ -1,5 +1,5 @@
 //
-//  GuiltyView.swift
+//  HappyView.swift
 //  Shifa
 //
 //  Created by Fahim Uddin on 4/3/25.
@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct GuiltyView: View {
+struct HappyView: View {
     
-    let guiltyEmotion = EmotionsViewModel.shared.emotions.first { $0.type == .guilty }
+    
+    let happyEmotion = EmotionsViewModel.shared.emotions.first { $0.type == .happy }
     
     var body: some View {
         ZStack {
@@ -21,17 +22,15 @@ struct GuiltyView: View {
             .ignoresSafeArea(edges: .all)
             
             TabView {
-                BeginGuiltyView(emotion: guiltyEmotion!)
-                GuiltyQuranView(emotion: guiltyEmotion!)
-                GuiltyPropheticGuidanceView(emotion: guiltyEmotion!)
-                
+                BeginHappyView(emotion: happyEmotion!)
+                HappyQuranView(emotion: happyEmotion!)
+                HappyProheticGuidanceView(emotion: happyEmotion!)
+                    
             }
             .tabViewStyle(.page(indexDisplayMode: .automatic))
         }
     }
 }
-
-
 #Preview {
-    GuiltyView()
+    HappyView()
 }

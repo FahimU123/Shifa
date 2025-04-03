@@ -51,17 +51,17 @@ struct EmotionsView: View {
     func destinationView(for emotion: Emotion) -> some View {
         switch emotion.type {
         case .happy:
-            HomeView()
+            HappyView()
         case .sad:
             SadView()
         case .angry:
             AngryView()
         case .doubtful:
-            HomeView()
+            DoubtfulView()
         case .guilty:
-            HomeView()
+            GuiltyView()
         case .anxious:
-            HomeView()
+            HurtView()
         }
     }
 }
