@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HurtView: View {
+    
     let hurtEmotion = EmotionsViewModel.shared.emotions.first { $0.type == .anxious }
     
     var body: some View {

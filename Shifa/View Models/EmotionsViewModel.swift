@@ -39,5 +39,4 @@ class EmotionsViewModel {
                 symbolGradient: Gradient(colors: [Color("Anxious Top"), Color("Anxious Bottom")]), type: .anxious)
     ]
     
-
 }

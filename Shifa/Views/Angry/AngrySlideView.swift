@@ -7,10 +7,12 @@
 
 import SwiftUI
 
-struct AngryDuaView: View {
+struct AngrySlideView: View {
         
         let emotion: Emotion
         
+        let advice: Advice
+    
         var body: some View {
             ZStack {
                 LinearGradient(
@@ -29,23 +31,8 @@ struct AngryDuaView: View {
                 .shadow(radius: 4)
                 
                 VStack {
-                    Image(systemName: "flag.2.crossed.fill")
-                        .font(.system(size: 100))
-                        .foregroundStyle(
-                            LinearGradient(
-                                colors: [Color(.white), Color("Dua Bottom")],
-                                startPoint: .top,
-                                endPoint: .bottom
-                            )
-                        )
-                        .shadow(radius: 4)
-                    
-                    
-                    Text("Dua:")
-                        .font(.system(size: 17, design: .monospaced).weight(.semibold))
-                        .multilineTextAlignment(.center)
-                        .padding(.bottom, 150)
-                        .padding(.top, 50)
+                    Text(advice.heading)
+                    Text(advice.text)
                 }
             }
         }
