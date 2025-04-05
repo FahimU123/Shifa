@@ -11,12 +11,14 @@ import Foundation
 class Advice {
     var emotion: EmotionType
     var source: String?
-    var heading: String
-    var text: String
+    var title: String
+    var description: String
     
-    init(heading: String, text: String, emotion: EmotionType) {
-        self.heading = heading
-        self.text = text
+    init(title: String, description: String, emotion: EmotionType, source: String?) {
+        self.title = title
+        self.description = description
         self.emotion = emotion
+        self.source = source
     }
 }
+

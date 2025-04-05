@@ -60,7 +60,7 @@ struct EmotionsView: View {
             DoubtfulView()
         case .guilty:
             GuiltyView()
-        case .anxious:
+        case .hurt:
             HurtView()
         }
     }

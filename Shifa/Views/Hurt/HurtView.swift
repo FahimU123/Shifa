@@ -9,7 +9,8 @@ import SwiftUI
 
 struct HurtView: View {
     
-    let hurtEmotion = EmotionsViewModel.shared.emotions.first { $0.type == .anxious }
+    let hurtEmotion: Emotion? = EmotionsViewModel.shared.emotions.first { $0.type == .hurt }
+    let hurtAdvice: [Advice] = AdviceViewModel.shared.advice.filter { $0.emotion == .hurt }
     
     var body: some View {
         ZStack {
@@ -18,15 +19,22 @@ struct HurtView: View {
                 startPoint: .top,
                 endPoint: .bottom
             )
-            .ignoresSafeArea(edges: .all)
+            .ignoresSafeArea()
             
-            TabView {
-                BeginHurtView(emotion: hurtEmotion!)
-                HurtQuranView(emotion: hurtEmotion!)
-                HurtPropheticGuidenceView(emotion: hurtEmotion!)
+            if let emotion = hurtEmotion, !hurtAdvice.isEmpty {
+                TabView {
+                    BeginHurtView(emotion: emotion)
                     
+                    ForEach(hurtAdvice, id: \.description) { advice in
+                        AngrySlideView(emotion: emotion, advice: advice)
+                    }
+                }
+                .tabViewStyle(.page(indexDisplayMode: .automatic))
+            } else {
+                Text("No advice available.")
+                    .font(.headline)
+                    .foregroundColor(.white)
             }
-            .tabViewStyle(.page(indexDisplayMode: .automatic))
         }
     }
 }

@@ -14,8 +14,9 @@ enum EmotionType {
     case angry
     case doubtful
     case guilty
-    case anxious
+    case hurt
 }
+
 class Emotion: Identifiable {
     let id = UUID()
     let title: String 

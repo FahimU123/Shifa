@@ -29,7 +29,7 @@ struct BeginSadView: View {
             .shadow(radius: 4)
             
             VStack {
-                Image(systemName: "drop.fill")
+                Image(systemName: emotion.symbol)
                     .font(.system(size: 100))
                     .foregroundStyle(
                         LinearGradient(
@@ -41,11 +41,12 @@ struct BeginSadView: View {
                     .shadow(radius: 4)
                 
                 
-                Text("Turn Sadness Into Hope Through Allah's Compassion")
-                    .font(.system(size: 17, design: .monospaced).weight(.semibold))
+                Text("Find Peace in Allah’s Mercy When Sadness Weighs Heavy")
+                    .font(.system(size: 34, design: .monospaced).weight(.semibold))
                     .multilineTextAlignment(.center)
                     .padding(.bottom, 150)
                     .padding(.top, 50)
+                    .padding(.horizontal, 30)
             }
         }
     }

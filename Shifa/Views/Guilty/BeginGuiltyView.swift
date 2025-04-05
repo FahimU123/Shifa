@@ -29,7 +29,7 @@ struct BeginGuiltyView: View {
             .shadow(radius: 4)
             
             VStack {
-                Image(systemName: "flame.fill")
+                Image(systemName: emotion.symbol)
                     .font(.system(size: 100))
                     .foregroundStyle(
                         LinearGradient(
@@ -41,11 +41,12 @@ struct BeginGuiltyView: View {
                     .shadow(radius: 4)
                 
                 
-                Text("Turn Guilt Into Forgiveness Through Allah's Mercy")
-                    .font(.system(size: 17, design: .monospaced).weight(.semibold))
+                Text("Let Guilt Lead You to Forgiveness and Growth")
+                    .font(.system(size: 34, design: .monospaced).weight(.semibold))
                     .multilineTextAlignment(.center)
                     .padding(.bottom, 150)
                     .padding(.top, 50)
+                    .padding(.horizontal, 30)
             }
         }
     }

@@ -1,13 +1,13 @@
 //
-//  AngryDuaView.swift
+//  DoubtfulPropheticGuidanceView.swift
 //  Shifa
 //
-//  Created by Fahim Uddin on 4/1/25.
+//  Created by Fahim Uddin on 4/3/25.
 //
 
 import SwiftUI
 
-struct AngrySlideView: View {
+struct DoubtfulPropheticGuidanceView: View {
     
     let emotion: Emotion
     let advice: Advice
@@ -30,31 +30,26 @@ struct AngrySlideView: View {
             
             VStack(alignment: .leading, spacing: 20) {
                 Text(advice.title)
-                    .font(.system(size: 34, design: .monospaced).weight(.semibold))
-                    .foregroundColor(.black)
+                    .font(.largeTitle.bold())
+                    .foregroundColor(.white)
                     .multilineTextAlignment(.leading)
-                ScrollView {
-                    Text(advice.description)
-                        .font(.system(size: 17, design: .monospaced).weight(.semibold))
-                        .foregroundColor(.black)
-                        .multilineTextAlignment(.leading)
-                }
+                
+                Text(advice.description)
+                    .font(.body)
+                    .foregroundColor(.white.opacity(0.9))
+                    .multilineTextAlignment(.leading)
+                
                 Spacer()
                 
                 VStack(alignment: .leading, spacing: 6) {
                     Text("Source:")
-                        .font(.system(size: 12, design: .monospaced).weight(.semibold))
-                        .foregroundColor(.black)
+                        .font(.caption.bold())
+                        .foregroundColor(.white.opacity(0.8))
                     
                     Text(advice.source ?? "")
-                        .font(.system(size: 12, design: .monospaced).weight(.semibold))
-                        .foregroundColor(.black)
+                        .font(.caption)
+                        .foregroundColor(.white.opacity(0.8))
                         .italic()
-                    
-                    Text("💭 How can you apply this today?")
-                        .font(.system(size: 12, design: .monospaced).weight(.semibold))
-                        .foregroundColor(.black)
-
                 }
             }
             .padding(30)
@@ -62,8 +57,6 @@ struct AngrySlideView: View {
         }
     }
 }
-
-
 //#Preview {
-//    AngryDuaView()
+//    DoubtfulPropheticGuidanceView()
 //}

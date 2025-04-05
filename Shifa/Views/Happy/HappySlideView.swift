@@ -1,14 +1,13 @@
 //
-//  AngryDuaView.swift
+//  HappyProheticGuidanceView.swift
 //  Shifa
 //
-//  Created by Fahim Uddin on 4/1/25.
+//  Created by Fahim Uddin on 4/3/25.
 //
 
 import SwiftUI
 
-struct AngrySlideView: View {
-    
+struct HappyProheticGuidanceView: View {
     let emotion: Emotion
     let advice: Advice
     
@@ -33,12 +32,12 @@ struct AngrySlideView: View {
                     .font(.system(size: 34, design: .monospaced).weight(.semibold))
                     .foregroundColor(.black)
                     .multilineTextAlignment(.leading)
-                ScrollView {
-                    Text(advice.description)
-                        .font(.system(size: 17, design: .monospaced).weight(.semibold))
-                        .foregroundColor(.black)
-                        .multilineTextAlignment(.leading)
-                }
+                
+                Text(advice.description)
+                    .font(.system(size: 17, design: .monospaced).weight(.semibold))
+                    .foregroundColor(.black)
+                    .multilineTextAlignment(.leading)
+                
                 Spacer()
                 
                 VStack(alignment: .leading, spacing: 6) {
@@ -63,7 +62,6 @@ struct AngrySlideView: View {
     }
 }
 
-
 //#Preview {
-//    AngryDuaView()
+//    HappyProheticGuidanceView()
 //}

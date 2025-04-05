@@ -9,8 +9,8 @@ import SwiftUI
 
 struct HappyView: View {
     
-    
-    let happyEmotion = EmotionsViewModel.shared.emotions.first { $0.type == .happy }
+    let happyEmotion: Emotion? = EmotionsViewModel.shared.emotions.first { $0.type == .happy }
+    let happyAdvice: [Advice] = AdviceViewModel.shared.advice.filter { $0.emotion == .happy }
     
     var body: some View {
         ZStack {
@@ -19,15 +19,22 @@ struct HappyView: View {
                 startPoint: .top,
                 endPoint: .bottom
             )
-            .ignoresSafeArea(edges: .all)
+            .ignoresSafeArea()
             
-            TabView {
-                BeginHappyView(emotion: happyEmotion!)
-                HappyQuranView(emotion: happyEmotion!)
-                HappyProheticGuidanceView(emotion: happyEmotion!)
+            if let emotion = happyEmotion, !happyAdvice.isEmpty {
+                TabView {
+                    BeginHappyView(emotion: emotion)
                     
+                    ForEach(happyAdvice, id: \.description) { advice in
+                        AngrySlideView(emotion: emotion, advice: advice)
+                    }
+                }
+                .tabViewStyle(.page(indexDisplayMode: .automatic))
+            } else {
+                Text("No advice available.")
+                    .font(.headline)
+                    .foregroundColor(.white)
             }
-            .tabViewStyle(.page(indexDisplayMode: .automatic))
         }
     }
 }

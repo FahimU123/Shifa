@@ -34,9 +34,9 @@ class EmotionsViewModel {
                 gradient: Gradient(colors: [Color("Guilty Top"), Color("Guilty Bottom")]),
                 symbolGradient: Gradient(colors: [Color("Heart Top"), Color("Heart Bottom")]), type: .guilty),
         
-        Emotion(title: "ANXIOUS", symbol: "exclamationmark.triangle.fill",
+        Emotion(title: "HURT", symbol: "exclamationmark.triangle.fill",
                 gradient: Gradient(colors: [Color("Anxious Top"), Color("Anxious Bottom")]),
-                symbolGradient: Gradient(colors: [Color("Anxious Top"), Color("Anxious Bottom")]), type: .anxious)
+                symbolGradient: Gradient(colors: [Color(.white), Color("Purple Bolt")]), type: .hurt)
     ]
     
 }

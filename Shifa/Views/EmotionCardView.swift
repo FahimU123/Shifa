@@ -40,7 +40,7 @@ struct EmotionCardView: View {
             
             Text(emotion.title)
                 .font(.headline)
-                .foregroundColor(.white)
+                .foregroundColor(.black)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         }
         .frame(height: 150)
