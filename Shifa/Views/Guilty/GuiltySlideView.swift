@@ -36,7 +36,7 @@ struct GuiltyPropheticGuidanceView: View {
                 
                 Text(advice.description)
                     .font(.body)
-                    .foregroundColor(.white.opacity(0.9))
+                    .foregroundColor(.white.opacity(0.89))
                     .multilineTextAlignment(.leading)
                 
                 Spacer()
