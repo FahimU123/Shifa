@@ -13,7 +13,7 @@ class EmotionsViewModel {
     
     private init() {}
     
-     var emotions: [Emotion] = [
+     let emotions: [Emotion] = [
         Emotion(title: "HAPPY", symbol: "sparkles",
                 gradient: Gradient(colors: [Color(.white), Color("Dua Bottom")]),
                 symbolGradient: Gradient(colors: [Color("Star Top"), Color("Star Bottom")]), type: .happy),
